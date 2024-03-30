@@ -32,7 +32,7 @@ router.post('/', (req, res) => {
 router.put('/buy/:id', (req, res) => {
     console.log('req.body:', req.body);
     console.log('req.params:', req.params);
-    let queryText = `UPDATE "groceryList" SET "purchased" = 'true' WHERE "id" = #1;`;
+    let queryText = `UPDATE "groceryList" SET "purchased" = 'true' WHERE "id" = $1;`;
     console.log(queryText);
     pool.query(queryText, [req.params.id]).then(() => {
         res.sendStatus(200);
