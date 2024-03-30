@@ -9,10 +9,16 @@ function List({listArray, getList}) {
             alert('Something went wrong marking your item as purchased!');
         })
     };
-    
-    const removeItem = (itemId) => {
 
+    const removeItem = (itemId) => {
+        axios.delete(`/api/grocery/${itemId}`).then((response) => {
+            getList();
+        }).catch((error) => {
+            console.error(error);
+            alert('Something went wrong removing this item!');
+        })
     };
+
     return (
         <>
             {listArray.map((item) => {
