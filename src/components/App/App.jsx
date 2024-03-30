@@ -32,7 +32,7 @@ useEffect(() => {
             <Header />
             <main>
             <Add item={item} setItem={setItem} quantity={quantity} setQuantity={setQuantity} unit={unit} setUnit={setUnit} image={image} setImage={setImage} getList={getList} />
-            <List listArray={listArray}/>
+            <List listArray={listArray} getList={getList}/>
             </main>
         </div>
     );
