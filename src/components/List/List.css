@@ -3,6 +3,10 @@
     text-align: center;
     border: 2px dashed #5a9679;
     background: #b6c7ac;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-decoration: line-through;
 }
 
 .not-bought {
@@ -10,4 +14,7 @@
     text-align: center;
     border: 2px dashed #5a9679;
     background: #e4ebb1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
