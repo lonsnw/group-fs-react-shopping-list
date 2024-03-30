@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React from 'react';
+import './Add.css';
 
 function Add({item, setItem, image, setImage, unit, setUnit, quantity, setQuantity, getList}) {
     const addItem = () => {
@@ -24,52 +25,58 @@ function Add({item, setItem, image, setImage, unit, setUnit, quantity, setQuanti
     }
 
     return(
-        <>
-        <h2>Add to list</h2>
-        <form onSubmit={submitItem}>
-        <label>
-            Item:
-        </label>
-        <input
-            type="text"
-            placeholder="Item"
-            value={item}
-            onChange={(evt) => setItem(evt.target.value)}
-        />
-        <br />
-        <label>
-            Image URL:
-        </label>
-        <input
-            type="text"
-            placeholder="Image URL"
-            value={image}
-            onChange={(evt) => setImage(evt.target.value)}
-        />
-        <br />
-        <label>
-            Unit:
-        </label>
-        <input
-            type="text"
-            placeholder="Unit"
-            value={unit}
-            onChange={(evt) => setUnit(evt.target.value)}
-        />
-        <br />
-        <label>
-            Quantity:
-        </label>
-        <input
-            type="text"
-            placeholder="Quantity"
-            value={quantity}
-            onChange={(evt) => setQuantity(evt.target.value)}
-        />
-        <br />
-        <button type="submit">Add to list</button>
-        </form>
-        </>
+        <div className="add-div">
+            <h2>Add to list</h2>
+            <form onSubmit={submitItem}>
+            <label className="label">
+                Item:
+            </label>
+            <input
+                className="input"
+                type="text"
+                placeholder="Item"
+                value={item}
+                onChange={(evt) => setItem(evt.target.value)}
+            />
+            <br />
+            <label className="label">
+                Image URL:
+            </label>
+            <input
+                className="input"
+                type="text"
+                placeholder="Image URL"
+                value={image}
+                onChange={(evt) => setImage(evt.target.value)}
+            />
+            <br />
+            <label className="label">
+                Unit:
+            </label>
+            <input
+                className="input"
+                type="text"
+                placeholder="Unit"
+                value={unit}
+                onChange={(evt) => setUnit(evt.target.value)}
+            />
+            <br />
+            <label className="label">
+                Quantity:
+            </label>
+            <input
+                className="input"
+                type="text"
+                placeholder="Quantity"
+                value={quantity}
+                onChange={(evt) => setQuantity(evt.target.value)}
+            />
+            <br />
+            <div className="button-class">
+                <button type="submit" className="add-button">Add to list</button>
+            </div>
+            </form>
+        </div>
     )
 }
 

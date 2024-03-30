@@ -30,9 +30,9 @@ useEffect(() => {
     return (
         <div className="App">
             <Header />
-            <main>
             <Add item={item} setItem={setItem} quantity={quantity} setQuantity={setQuantity} unit={unit} setUnit={setUnit} image={image} setImage={setImage} getList={getList} />
-            <List listArray={listArray} getList={getList}/>
+            <main>
+                <List listArray={listArray} getList={getList}/>
             </main>
         </div>
     );

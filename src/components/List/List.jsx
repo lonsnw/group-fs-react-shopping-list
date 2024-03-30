@@ -1,4 +1,6 @@
 import axios from 'axios'; 
+import './List.css';
+
 
 function List({listArray, getList}) {
     const buyItem = (itemId) => {
@@ -26,7 +28,7 @@ function List({listArray, getList}) {
                 return <div key={item.id} className={item.purchased ? "bought" : "not-bought"}>
                     <h3>{item.name}</h3>
                     {item.displayimage ? (
-                        <img src={item.displayimage} alt={item.name} width="200px" />
+                        <img src={item.displayimage} alt={item.name} style={{ width : 200, padding : 20 }} />
                     ) : (
                         <div className='no-image'>
                             <span>No Image</span>

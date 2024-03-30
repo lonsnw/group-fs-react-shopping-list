@@ -1,4 +1,12 @@
-main {
-  width: 90%;
+html {
+  width: 100%;
   margin: auto;
+}
+
+main {
+  width: 95%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
 }
