@@ -14,15 +14,6 @@ main {
   padding: 20px;
 }
 
-.buttons-section {
-  width: 35%;
-  margin: auto;
-  display: flex;
-  gap: 25px;
-  align-items: stretch;
-  padding: 20px;
-}
-
 button {
   font-family: Arial;
   color: #ffffff;

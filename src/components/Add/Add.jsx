@@ -1,8 +1,9 @@
 import axios from 'axios';
 import React from 'react';
 import './Add.css';
+import Button from '@mui/material/Button';
 
-function Add({item, setItem, image, setImage, unit, setUnit, quantity, setQuantity, getList}) {
+function Add({item, setItem, image, setImage, unit, setUnit, quantity, setQuantity, getList, ThemeProvider, theme}) {
     const addItem = () => {
         axios.post('/api/grocery', { name: item, displayimage: image, unit: unit, quantity: quantity })
         .then((response) => {
@@ -73,7 +74,9 @@ function Add({item, setItem, image, setImage, unit, setUnit, quantity, setQuanti
             />
             <br />
             <div className="button-class">
-                <button type="submit" className="add-button">Add to list</button>
+                <ThemeProvider theme={theme}> 
+                    <Button variant="contained" color="primary" type="submit" className="add-button">Add to list</Button>
+                </ThemeProvider>
             </div>
             </form>
         </div>

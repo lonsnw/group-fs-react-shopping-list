@@ -1,8 +1,8 @@
 import axios from 'axios'; 
 import './List.css';
+import Button from '@mui/material/Button';
 
-
-function List({listArray, getList}) {
+function List({listArray, getList, theme, ThemeProvider}) {
     const buyItem = (itemId) => {
         axios.put(`/api/grocery/buy/${itemId}`).then((response) => {
             getList();
@@ -44,7 +44,9 @@ function List({listArray, getList}) {
                             </div>
                         ) : (
                             <div className="not-bought">
-                                <span><button onClick={() => buyItem(item.id)}>Buy</button> <button onClick={() => removeItem(item.id)}>Remove</button></span>
+                                <ThemeProvider theme={theme}>
+                                <span><Button color="primary" variant="contained" onClick={() => buyItem(item.id)}>Buy</Button> <Button variant="contained" onClick={() => removeItem(item.id)}>Remove</Button></span>
+                                </ThemeProvider>
                             </div>
                         )}
                     </div>
