@@ -3,6 +3,7 @@ import axios from 'axios';
 import Header from '../Header/Header.jsx';
 import List from '../List/List.jsx';
 import Add from '../Add/Add.jsx';
+import Buttons from '../Buttons/Buttons.jsx';
 import './App.css';
 
 
@@ -29,10 +30,13 @@ useEffect(() => {
 
     return (
         <div className="App">
-            <Header />
+            <Header getList={getList} />
             <Add item={item} setItem={setItem} quantity={quantity} setQuantity={setQuantity} unit={unit} setUnit={setUnit} image={image} setImage={setImage} getList={getList} />
+            <div className="buttons-section">
+                <Buttons getList={getList} />
+            </div>
             <main>
-                <List listArray={listArray} getList={getList}/>
+                <List listArray={listArray} getList={getList} />
             </main>
         </div>
     );

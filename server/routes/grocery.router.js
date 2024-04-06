@@ -44,6 +44,18 @@ router.put('/buy/:id', (req, res) => {
 
 
 // RESET PUT
+router.put('/', (req, res) => {
+    console.log('req.body:', req.body);
+    console.log('req.params:', req.params);
+    let queryText = `UPDATE "groceryList" SET "purchased" = 'false';`;
+    console.log(queryText);
+    pool.query(queryText).then(() => {
+        res.sendStatus(200);
+    }).catch((error) => {
+        console.error(error);
+        res.sendStatus(500);
+    })
+})
 
 // DELETE
 router.delete('/:id', (req, res) => {
@@ -58,8 +70,17 @@ router.delete('/:id', (req, res) => {
     });
 })
 
-
 // CLEAR DELETE
-
+router.delete('/', (req, res) => {
+    console.log('req.params:', req.params);
+    let queryText = 'DELETE FROM "groceryList";';
+    console.log(queryText);
+    pool.query(queryText).then(() => {
+        res.sendStatus(200);
+    }).catch((error) => {
+        console.error(error);
+        res.sendStatus(500);
+    });
+})
 
 module.exports = router;
